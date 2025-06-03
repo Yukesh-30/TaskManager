@@ -9,10 +9,15 @@ import path from 'path'
 
 // Custom imports
 import connectDB from './config/db.js'
-import route from './routes/authRoute.js'
+import authRoute from './routes/authRoute.js'
+import userRoute from './routes/userRoute.js'
+import taskRoute from './routes/taskRoute.js'
+import reportroute from './routes/reportRoute.js'
 
 // Create express app
 const app = express()
+
+app.use('/uploads', express.static('uploads'));
 
 // Connect to MongoDB
 connectDB()
@@ -28,7 +33,13 @@ app.use(cors({
 app.use(json())
 
 // API Routes
-app.use('/api/auth', route)
+app.use('/api/auth', authRoute)
+// User Route
+app.use('/api/user',userRoute)
+//Task Route
+app.use('/api/task',taskRoute)
+//report route
+app.use('/api/report',reportroute)
 
 // Start the server
 const PORT = process.env.PORT || 5000

@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import  UserModel  from '../models/user.js';
 
-export const protect = async (req, res, next) => {
+const protect = async (req, res, next) => {
     try {
         let token = req.headers.authorization;
 
@@ -18,7 +18,7 @@ export const protect = async (req, res, next) => {
     }
 };
 
-export const adminOnly = (req, res, next) => {
+const adminOnly = (req, res, next) => {
     try {
         const role = req.user.role;
         if (role && role === "admin") {
@@ -30,3 +30,5 @@ export const adminOnly = (req, res, next) => {
         return res.status(403).json({ message: "Error in admin check" });
     }
 };
+
+export {protect,adminOnly}

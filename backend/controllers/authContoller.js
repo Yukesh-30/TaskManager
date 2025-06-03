@@ -20,7 +20,7 @@ const userRegistration = async (req, res) => {
         console.log('Invite token:', process.env.INVITE_TOKEN);
 
         let role = "member";
-        if (adminIviteToken && adminIviteToken === 4588944) {
+        if (adminIviteToken && adminIviteToken === process.env.INVITE_TOKEN) {
             role = "admin";
         }
 
