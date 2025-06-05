@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
 @import "tailwindcss";
 
 
@@ -7,6 +8,7 @@
 @theme{
   --font-heading : "Oswald";
   --font-para: "Montserrat"; 
+  --font-bg: "Gideon+Roman"; 
   --color-blue:#006dff;
   --color-orange : #ff7d2d;
   
