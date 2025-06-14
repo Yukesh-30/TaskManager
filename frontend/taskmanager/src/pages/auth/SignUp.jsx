@@ -47,14 +47,16 @@ function SignUp() {
       })
        const {token,role} = response.data
        console.log(response.data)
-
+       
        if(token){
           localStorage.setItem("token",token)
+          localStorage.setItem("role",role)
+          localStorage.setItem("user", JSON.stringify(response.data))
           if(role==="admin"){
             navigate('/admin/dashboard')
           }
           else{
-            navigate('/user/userdashboard')
+            navigate('/member/dashboard')
           }
        }
     } catch (error) {
@@ -161,6 +163,7 @@ function SignUp() {
               <button
                 type="submit"
                 className="w-[80px] h-[40px] bg-black text-white p-1.5 ml-auto mr-auto rounded-[12px] cursor-pointer hover:scale-110"
+
               >
                 Signup
               </button>

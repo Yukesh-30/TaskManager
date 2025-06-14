@@ -44,6 +44,8 @@ function Login() {
         localStorage.setItem("token",token)
         localStorage.setItem("role",role)
         localStorage.setItem("userId",_id)
+        localStorage.setItem("user", JSON.stringify(response.data))
+        
         if(role==="admin"){
           navigate('/admin/dashboard')
         }
