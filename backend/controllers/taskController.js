@@ -313,7 +313,24 @@ const getUserDashboard = async (req, res) => {
   }
 };
 
+const editUserTaskStatus = async (req,res) =>{
+  const {userUpdateStatus} = req.body
+  try {
+    const task = await Task.findById(req.params.id)
+    if(!task){
+      return res.status(401).json({message:"The task not found"})
+    }
+    task.Status = userUpdateStatus
+    await task.save()
+
+    return res.status(200).json(task)
+  
+    
+  } catch (error) {
+    return res.status(501).json({message:error})
+  }
+}
 
 
 
-export {getTaskById,creatTask,getAllTasks,updateTask,deleteTask,updateTaskStatus,updateTodoChecklist,getDashboardData,getUserDashboard}
+export {getTaskById,creatTask,getAllTasks,updateTask,deleteTask,updateTaskStatus,updateTodoChecklist,getDashboardData,getUserDashboard,editUserTaskStatus}

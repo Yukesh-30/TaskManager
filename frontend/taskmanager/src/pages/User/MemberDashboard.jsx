@@ -12,7 +12,6 @@ const MemberDashboard = () => {
   const [dashboardData, setDashboardData] = useState(null)
   const [loading, setLoading] = useState(true)
   const user = JSON.parse(localStorage.getItem("user") || "{}")
-  console.log(user)
 
   useEffect(() => {
     fetchDashboardData()
@@ -20,7 +19,7 @@ const MemberDashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/api/task/userdashboard",{
+      const response = await axios.post("http://localhost:8080/api/task/userdashboard",{
         _id : user._id,
         email : user.email
       })

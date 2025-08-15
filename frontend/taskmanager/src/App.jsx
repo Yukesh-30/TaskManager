@@ -38,14 +38,14 @@ function App() {
             <Route path="/admin/createtask" element={<CreateTask/>}/>
             <Route path="/admin/managetask" element={<ManageTask/>}/>
             <Route path="/admin/managauser" element={<ManageUsers/>}/>
-            <Route path="/tasks/:id" element={<TaskDetail/>}/>
-            <Route path="/edit/task/:id" element={<TaskEdit/>}/>
+            <Route path="/admin/tasks/:id" element={<TaskDetail/>}/>
+            <Route path="/admin/edit/task/:id" element={<TaskEdit/>}/>
             
           </Route>
 
           <Route element={<PrivateRoute allowedRole="member"/>}>
             <Route path="/member/mytask" element={<MyTask/>}/>
-            <Route path="/member/viewtask" element={<ViewTask/>}/>
+            <Route path="/member/tasks/:id" element={<ViewTask/>}/>
             <Route path="/member/dashboard" element={<MemberDashboard/>}/>
 
             

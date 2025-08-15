@@ -9,7 +9,8 @@ import path from 'path'
 
 // Custom imports
 import connectDB from './config/db.js'
-import authRoute from './routes/authRoute.js'
+import authRoute from './routes/authRoute.js' 
+
 import userRoute from './routes/userRoute.js'
 import taskRoute from './routes/taskRoute.js'
 import reportroute from './routes/reportRoute.js'
@@ -44,5 +45,5 @@ app.use('/api/report',reportroute)
 // Start the server
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
-    console.log(`✅ Server running on port ${PORT}`)
+    console.log(`Server running on port ${PORT}`)
 })

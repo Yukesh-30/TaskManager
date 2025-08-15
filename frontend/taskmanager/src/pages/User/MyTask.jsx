@@ -106,7 +106,6 @@ const MyTask = () => {
                 >
                   <option value="all">All Status</option>
                   <option value="pending">Pending</option>
-                  <option value="in-progress">In Progress</option>
                   <option value="completed">Completed</option>
                 </select>
               </div>
@@ -116,7 +115,7 @@ const MyTask = () => {
           <div className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredTasks.map((task) => (
-                <TaskCard key={task._id} task={task} onDelete={handleDeleteTask} />
+                <TaskCard key={task._id} task={task} onDelete={handleDeleteTask}/>
               ))}
             </div>
 

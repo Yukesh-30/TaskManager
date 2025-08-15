@@ -174,7 +174,7 @@ const CreateTask = () => {
                 </select>
               </div>
 
-              <div className="col-span-2">
+              {/* <div className="col-span-2">
                 <div className="flex justify-between items-center mb-2">
                   <label className="block text-sm font-medium text-gray-700">Checklist</label>
                   <button
@@ -225,7 +225,7 @@ const CreateTask = () => {
                     <p className="text-sm text-gray-500">No checklist items added yet.</p>
                   )}
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="flex justify-end space-x-3 pt-4">

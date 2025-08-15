@@ -9,6 +9,8 @@ const TaskCard = ({ task, onDelete }) => {
     const date = new Date(dateString)
     return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
   }
+
+  const role = localStorage.getItem("role")
   
 
   const getPriorityColor = (priority) => {
@@ -56,16 +58,16 @@ const TaskCard = ({ task, onDelete }) => {
         </div>
       </div>
       <div className="bg-gray-50 px-5 py-3 border-t border-gray-200 flex justify-between">
-        <Link to={`/tasks/${task._id}`} className="text-indigo-600 hover:text-indigo-900 text-sm font-medium">
+        <Link to={`/${role}/tasks/${task._id}`} className="text-indigo-600 hover:text-indigo-900 text-sm font-medium">
           View Details
         </Link>
         <div className="flex space-x-4">
-          <Link to={`/edit/task/${task._id}`} className="text-green-600 hover:text-green-900 text-sm font-medium">
+          {role==="admin" && (<Link to={`/${role}/edit/task/${task._id}`} className="text-green-600 hover:text-green-900 text-sm font-medium">
             Edit
-          </Link>
-          <button onClick={() => onDelete(task._id)} className="text-red-600 hover:text-red-900 text-sm font-medium">
+          </Link>) }
+          {role==="admin" && (<button onClick={() => onDelete(task._id)} className="text-red-600 hover:text-red-900 text-sm font-medium">
             Delete
-          </button>
+          </button>)}
         </div>
       </div>
     </div>

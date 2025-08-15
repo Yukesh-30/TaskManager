@@ -55,8 +55,8 @@ const exportTask = async (req,res)=>{
 }
 const exportUsersReport = async (req, res) => {
   try {
-    const users = await User.find().select("name email _id").lean();
-    const userTasks = await Task.find().populate("assignedTo", "name email _id");
+    const users = await users.find().select("name email _id").lean();
+    const userTasks = await task.find().populate("assignedTo", "name email _id");
 
     const userTaskMap = {};
 

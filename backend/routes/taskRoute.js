@@ -10,6 +10,7 @@ import {
     updateTodoChecklist,
     getDashboardData,
     getUserDashboard,
+    editUserTaskStatus
 } from "../controllers/taskController.js";
 
 
@@ -23,6 +24,7 @@ route.put('/:id',protect,adminOnly,updateTask)
 route.delete('/:id',protect,adminOnly,deleteTask)
 route.put('/:id/status',protect,updateTaskStatus)
 route.put('/:id/todo',protect,updateTodoChecklist)
+route.put('/edit/status/:id',protect,editUserTaskStatus)
 
 
 
